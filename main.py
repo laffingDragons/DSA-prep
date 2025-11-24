@@ -302,4 +302,42 @@ def patternWithSwitchAgain(row = 5):
 
 patternWithSwitchAgain(9);
 
+# COunt the digits in the number
+def countTheDigits(n):
+    #if the no is 0
+    if(n == 0): 
+        return 1
+    # if the no is -ve
+    n = abs(n)
+    
+    count=0;
+    while n>0 :
+        n = int(n/10);
+        count += 1;
+    return count;
+
+print(countTheDigits(1234567))
+
+#Check wheter the digit are palindrome 
+def checkForPalindromeDigit(x):
+    if(x<0):
+        print("The given is -ve number")
+        return
+    n = x
+    rev = 0;
+    while(n>0):
+        rem = n % 10;
+        rev = (10*rev) + rem;
+        n = int(n/10);
+    
+    print(f"{x} and reverse {rev}")
+    if(x == rev):
+        print("The number is Palindrome")
+    else:
+        print("The number is Not a Palindrome")
+    # print(f"{x} is {'Palindrome' if str(x) == str(x)[::-1] else 'Not a Palindrome'}")
+    
+
+checkForPalindromeDigit(12321)
+
 
