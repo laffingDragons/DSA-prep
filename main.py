@@ -337,7 +337,26 @@ def checkForPalindromeDigit(x):
         print("The number is Not a Palindrome")
     # print(f"{x} is {'Palindrome' if str(x) == str(x)[::-1] else 'Not a Palindrome'}")
     
-
 checkForPalindromeDigit(12321)
+
+#Reverse a signed integer. also it should be in the range of [2ˆ-32, 2ˆ32]
+def reverseInteger(x):
+    rev = 0;
+    n = abs(x)
+    while(n>0):
+        rem = n % 10;
+        rev = (10*rev) + rem;
+        n = int(n/10);
+    
+    limit = 2 ** 32;
+    if rev > limit:
+        return print(f"Off limits");
+    if(x<0):
+        print(f"The reverse number is -{rev}")
+    else:
+        print(f"The reverse number is {rev}")
+    # print(f"{x} is {'Palindrome' if str(x) == str(x)[::-1] else 'Not a Palindrome'}")
+    
+reverseInteger(312)
 
 
