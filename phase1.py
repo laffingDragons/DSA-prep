@@ -22,7 +22,6 @@ def removeValue(val = 3):
     n = len(duplicateNonDecreasingArr2);
     x = 0;
     for i in range(n):
-        print(x)
         if not a[i] == val:
             a[x] = a[i];  #the order is inverse
             x = x+1;
