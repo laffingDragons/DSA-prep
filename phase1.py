@@ -140,3 +140,52 @@ def countConsectiveOne():
     
     
 countConsectiveOne()
+
+#find a missing no from an array
+missingNumArray = [1, 0, 3, 4, 6, 5];
+
+def findMissingNumber(n = len(missingNumArray)):
+    print("Find a missing no from an array :-")
+    # By using the sumasition formula 
+    totalSum = n*(n+1)/2;
+    partialSum = 0
+    
+    for i in range(n):
+        partialSum += missingNumArray[i];
+    
+    print(int(totalSum - partialSum));
+    
+findMissingNumber()
+
+
+#Find the missing number from an array of duplicates
+arrayOfDuplicates = [ 1, 2, 2, 3, 1, 4, 5 , 4, 5, 3, 6];
+
+def findMissingDuplicateMethod1(n = len(arrayOfDuplicates)):
+    print("Find the missing number from an array of duplicates : Method 1")
+    hash = {}
+    
+    for i in range(n):
+        if arrayOfDuplicates[i] not in hash:
+            hash[arrayOfDuplicates[i]] = 1
+        else:
+            hash[arrayOfDuplicates[i]] += 1;
+    
+    for i in range(len(hash)):
+        if hash[i+1] == 1:
+            print(i+1)
+            break;
+
+
+
+def findMissingDuplicateMethod2(n = len(arrayOfDuplicates)):
+    print("Find the missing number from an array of duplicates using XOR: Method 2 ")
+    xor = 0;
+    
+    for i in range(n):
+        xor ^= arrayOfDuplicates[i];
+    print(xor);
+
+
+findMissingDuplicateMethod1()
+findMissingDuplicateMethod2()
