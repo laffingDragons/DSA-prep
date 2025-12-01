@@ -65,3 +65,11 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 
 print("The fibonacci number at the index 5 is:", fib(8));
+
+#find the rabbit population at the month n
+def rabbit(n):
+    if n == 1: return 2
+    return rabbit(n - 1) * 2
+
+print("The rabbit population at nth month will be:", rabbit(2))
+
