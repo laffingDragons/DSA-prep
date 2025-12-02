@@ -29,3 +29,18 @@ def binarySearch(target):
     return -1;
 
 print(binarySearch(45))
+
+#bubble sort
+def swap(a,b):
+    temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+    
+def bubbleSort(n = len(arr)):
+    for i in range(n):
+        for j in range(n-1-i):
+            if(arr[j] > arr[j+1]):
+                swap(j, j+1)
+    return arr;                
+
+print("Bubble sorted array is : ",bubbleSort())
